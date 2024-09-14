@@ -3,7 +3,8 @@ import { MenuDayView } from "~/components/feature-menu/menu-day";
 
 import { Separator } from "~/components/ui/separator";
 import { MenuDay } from "~/server/domain/types";
-import { getUserMenu } from "~/server/repository/menuRepository";
+import {env} from "~/env";
+import {API, API_VERSION, MENU_ENDPOINT} from "~/server/constants/constants";
 
 export default async function ShoppingListPage() {
   const { userId } = auth();
@@ -21,25 +22,30 @@ export default async function ShoppingListPage() {
     sat: "Samstag",
     sun: "Sonntag",
   };
-  
-  const userMenu = await getUserMenu(userId);
-  if (!userMenu) {
+  try {
+    const response = await fetch(`${env.APPLICATION_SERVER_URL}${API}${API_VERSION}${MENU_ENDPOINT}/${userId}`)
+    const menu = await response.json();
+    if (!menu) {
+      return <div>Kein Menü gefunden</div>;
+    }
+    return (
+        <div className="overflow-y-auto">
+          <div className="flex justify-between items-center">
+            <h1>Menu</h1>
+
+          </div>
+          <Separator />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            {dayKeys.map((dayKey) => (
+                <MenuDayView day={dayMap[dayKey]!} menu={menu![dayKey] as MenuDay} />
+
+            ))}
+
+          </div>
+        </div>
+    );
+  } catch (_e) {
     return <div>Kein Menü gefunden</div>;
   }
-  return (
-    <div className="overflow-y-auto">
-      <div className="flex justify-between items-center">
-        <h1>Menu</h1>
-       
-      </div>
-      <Separator />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-        {dayKeys.map((dayKey) => (
-            <MenuDayView day={dayMap[dayKey]!} menu={userMenu![dayKey] as MenuDay} />
-          
-        ))}
-        
-      </div>
-    </div>
-  );
+
 }

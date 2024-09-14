@@ -7,16 +7,11 @@ export const env = createEnv({
    * isn't built with invalid env vars.
    */
   server: {
-    POSTGRES_URL: z.string().url(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
-    REFRESH_MENU_SECRET: z.string(),
-    REFRESH_PRODUCT_SECRET: z.string(),
-    USERNAME: z.string(),
-    PASSWORD: z.string(),
-    GITHUB_TOKEN: z.string(),
-    GITHUB_URL: z.string().url(),
+    APPLICATION_SERVER_URL: z.string()
+        .default("http://localhost:3000"),
   },
 
   /**
@@ -33,15 +28,8 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
-    POSTGRES_URL: process.env.POSTGRES_URL,
     NODE_ENV: process.env.NODE_ENV,
-    REFRESH_MENU_SECRET: process.env.REFRESH_MENU_SECRET,
-    REFRESH_PRODUCT_SECRET: process.env.REFRESH_PRODUCT_SECRET,
-    USERNAME: process.env.USERNAME,
-    PASSWORD: process.env.PASSWORD,
-    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
-    GITHUB_URL: process.env.GITHUB_URL,
-    // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
+    APPLICATION_SERVER_URL: process.env.APPLICATION_SERVER_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

@@ -1,0 +1,6 @@
+export const API = "/api"
+export const API_VERSION = "/v1"
+export const MENU_ENDPOINT = "/menus"
+export const DISCOUNT_ENDPOINT = "/discounts"
+export const SETTINGS_ENDPOINT = "/settings"
+export const LIST_ENDPOINT = "/lists"
