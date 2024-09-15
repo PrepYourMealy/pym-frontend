@@ -40,10 +40,12 @@ export function RecipeDialog({recipe, selectedRecipe, onClick}: Props) {
 
                         </div>
                     </DialogHeader>
-                    <div className="mt-2">
-                        <p className="text-sm text-muted-foreground mb-4">
-                            <Clock className="w-4 h-4 inline-block mr-1"/>
-                            {recipe.cookTime + recipe.prepTime} min
+                    <div>
+                        <p className="text-sm text-muted-foreground mb-4 flex flex-row gap-2 items-center">
+                            <Clock className="w-4 h-4"/>
+                            <div>
+                                {recipe.cookTime} min
+                            </div>
                         </p>
                         <h4 className="font-semibold mb-2">Zutaten:</h4>
                         <ul className="list-disc space-y-1 pl-4">
@@ -56,8 +58,6 @@ export function RecipeDialog({recipe, selectedRecipe, onClick}: Props) {
                             {recipe.steps.map((step, index) => (
                                 <li key={index}>
                                     {step.description}
-                                    <Clock className="w-4 h-4 inline-block mr-1"/>
-                                    {step.duration} min
                                 </li>
                             ))}
                         </ol>
