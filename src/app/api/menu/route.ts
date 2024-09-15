@@ -27,7 +27,12 @@ const GET = async (_req: NextRequest) => {
         console.error("Unauthorized");
         return new Response("Unauthorized", {status: 401});
     }
-    const response = await fetch(`${env.APPLICATION_SERVER_URL}${API}${API_VERSION}${MENU_ENDPOINT}/${userId}`)
+    const response = await fetch(`${env.APPLICATION_SERVER_URL}${API}${API_VERSION}${MENU_ENDPOINT}/${userId}`, {
+        method: "GET",
+        headers: {
+            "Accept": "application/json",
+        }
+    })
     const menu = await response.json();
     if (!response.ok) {
         return new Response("Menu creation failed", {status: 500});
