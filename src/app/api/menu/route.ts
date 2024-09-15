@@ -39,7 +39,7 @@ const GET = async (_req: NextRequest) => {
     if (!response.ok) {
         return new Response("Menu creation failed", {status: 500});
     }
-    return new Response(menu, {status: 200});
+    return new Response(JSON.stringify(menu), {status: 200});
 }
 
 export {POST, GET};
