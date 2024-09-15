@@ -1,6 +1,6 @@
 import { ShoppingListPDFDownload } from "./shopping-list-pdf-download";
 
-interface ShoppingItem {
+export interface ShoppingItem {
   name: string;
   price: number;
   quantity: string;
