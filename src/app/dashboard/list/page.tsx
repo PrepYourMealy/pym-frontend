@@ -13,6 +13,9 @@ export default async function ShoppingListPage() {
   try {
       const response = await fetch(`${env.APPLICATION_SERVER_URL}${API}${API_VERSION}${LIST_ENDPOINT}/${userId}`)
       const data = await response.json();
+      if (!data) {
+            return <div>Keine Einkaufsliste gefunden</div>;
+      }
       return (
           <div className="overflow-y-auto">
               <h1>Einkaufsliste</h1>
@@ -23,6 +26,6 @@ export default async function ShoppingListPage() {
           </div>);
 
   } catch (_e) {
-      return <div>Kein Menü gefunden</div>;
+      return <div>Kein Einkaufsliste gefunden</div>;
   }
 }
