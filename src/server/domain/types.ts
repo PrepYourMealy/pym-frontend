@@ -29,8 +29,9 @@ export type Menu = {
 
 export type MenuDay = {
   [key: string]: Menu | null;
-  lunch: Menu;
-  dinner: Menu;
+  breakfast: Menu | null;
+  lunch: Menu | null;
+  dinner: Menu | null;
 };
 
 export type ShoppingListItem = {
