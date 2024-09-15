@@ -2,7 +2,7 @@
 FROM node:lts-alpine AS deps
 
 WORKDIR /opt/app
-COPY package.json yarn.lock ./
+COPY package.json ./
 RUN npm install --production
 
 FROM node:lts-alpine AS builder
