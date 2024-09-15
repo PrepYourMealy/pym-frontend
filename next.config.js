@@ -6,19 +6,7 @@
 
 /** @type {import("next").NextConfig} */
 const config = {
-  // async headers() {
-  //   return [
-  //     {
-  //       source: "/(.*)",
-  //       headers: [
-  //         {
-  //           key: "Content-Security-Policy",
-  //           value: "default-src 'self'; script-src 'self' 'nonce-123456' https://clerk.accounts.dev cdn.jsdelivr.net js.sentry-cdn.com browser.sentry-cdn.com *.ingest.sentry.io challenges.cloudflare.com scdn.clerk.com segapi.clerk.com;",
-  //         },
-  //       ],
-  //     },
-  //   ];
-  // },
+  output: "standalone",
   images: {
     remotePatterns: [
       {

@@ -1,26 +1,51 @@
-# Install dependencies only when needed
-FROM node:lts-alpine AS deps
+##### DEPENDENCIES
 
-WORKDIR /opt/app
-COPY package.json ./
-RUN npm install --production
+FROM --platform=linux/amd64 node:20-alpine AS deps
+RUN apk add --no-cache libc6-compat openssl
+WORKDIR /app
 
-FROM node:lts-alpine AS builder
+COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
-ENV NODE_ENV=production
-WORKDIR /opt/app
+RUN \
+    if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
+    elif [ -f package-lock.json ]; then npm ci; \
+    elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && pnpm i; \
+    else echo "Lockfile not found." && exit 1; \
+    fi
+
+##### BUILDER
+
+FROM --platform=linux/amd64 node:20-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-COPY --from=deps /opt/app/node_modules ./node_modules
-RUN npm run build
 
-# Production image, copy all the files and run next
-FROM node:lts-alpine AS runner
+# ENV NEXT_TELEMETRY_DISABLED 1
 
-ARG X_TAG
-WORKDIR /opt/app
-ENV NODE_ENV=production
-COPY --from=builder /opt/app/next.config.js ./
-COPY --from=builder /opt/app/public ./public
-COPY --from=builder /opt/app/.next ./.next
-COPY --from=builder /opt/app/node_modules ./node_modules
-CMD ["node_modules/.bin/next", "start"]
+RUN \
+    if [ -f yarn.lock ]; then SKIP_ENV_VALIDATION=1 yarn build; \
+    elif [ -f package-lock.json ]; then SKIP_ENV_VALIDATION=1 npm run build; \
+    elif [ -f pnpm-lock.yaml ]; then npm install -g pnpm && SKIP_ENV_VALIDATION=1 pnpm run build; \
+    else echo "Lockfile not found." && exit 1; \
+    fi
+
+##### RUNNER
+
+FROM --platform=linux/amd64 gcr.io/distroless/nodejs20-debian12 AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+
+# ENV NEXT_TELEMETRY_DISABLED 1
+
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/package.json ./package.json
+
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
+EXPOSE 3000
+ENV PORT 3000
+
+CMD ["server.js"]
