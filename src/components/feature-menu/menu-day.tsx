@@ -14,7 +14,6 @@ interface Props {
 
 const createAccordionItem = (menu: Menu) => {
     return (
-
         <AccordionItem value="item-1">
             <AccordionTrigger className="text-lg">
                 {menu.name}
@@ -33,7 +32,7 @@ const createAccordionItem = (menu: Menu) => {
                         <h5 className="mb-1 text-base font-medium">Zubereitung:</h5>
                         <ol className="list-decimal space-y-1 pl-4">
                             {menu.steps.map((step, index) => (
-                                <li key={index}>{step}</li>
+                                <li key={index}>{step.description}</li>
                             ))}
                         </ol>
                     </div>

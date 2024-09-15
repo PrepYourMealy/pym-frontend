@@ -19,11 +19,16 @@ export type Ingredient = {
   unit: string;
 };
 
+export type Step = {
+    [key: string]: string | null;
+    description: string;
+}
+
 export type Menu = {
-  [key: string]: string | string[] | null | Ingredient[] | number;
+  [key: string]: Step[] | string | null | Ingredient[] | number;
   name: string;
   ingredients: Ingredient[];
-  steps: string[];
+  steps: Step[];
   caloriesPerPersion: number;
 };
 
