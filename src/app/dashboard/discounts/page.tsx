@@ -1,8 +1,6 @@
 "use client";
 import {DiscountSearch} from "~/components/feature-discounts/discount-search";
 import {Separator} from "~/components/ui/separator";
-import {env} from "~/env";
-import {API, API_VERSION, DISCOUNT_ENDPOINT} from "~/server/constants/constants";
 import {useEffect, useState} from "react";
 
 export default function DiscountsPage() {
