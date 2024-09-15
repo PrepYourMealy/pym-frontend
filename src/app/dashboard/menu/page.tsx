@@ -1,10 +1,11 @@
-import { auth } from "@clerk/nextjs/server";
-import { MenuDayView } from "~/components/feature-menu/menu-day";
+import {auth} from "@clerk/nextjs/server";
+import {MenuDayView} from "~/components/feature-menu/menu-day";
 
-import { Separator } from "~/components/ui/separator";
-import { MenuDay } from "~/server/domain/types";
+import {Separator} from "~/components/ui/separator";
+import {MenuDay} from "~/server/domain/types";
 import {env} from "~/env";
 import {API, API_VERSION, MENU_ENDPOINT} from "~/server/constants/constants";
+import {redirect, RedirectType} from "next/navigation";
 
 export default async function ShoppingListPage() {
   const { userId } = auth();
@@ -12,11 +13,11 @@ export default async function ShoppingListPage() {
     console.error("Unauthorized");
     return new Response("Unauthorized", { status: 401 });
   }
-  const dayKeys = ["mon", "tue", "wen", "thu", "fri", "sat", "sun"];
+  const dayKeys = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
   const dayMap: Record<string, string> = {
     mon: "Montag",
     tue: "Dienstag",
-    wen: "Mittwoch",
+    wed: "Mittwoch",
     thu: "Donnerstag",
     fri: "Freitag",
     sat: "Samstag",
@@ -25,8 +26,8 @@ export default async function ShoppingListPage() {
   try {
     const response = await fetch(`${env.APPLICATION_SERVER_URL}${API}${API_VERSION}${MENU_ENDPOINT}/${userId}`)
     const menu = await response.json();
-    if (!menu) {
-      return <div>Kein Menü gefunden</div>;
+    if (!menu || !response.ok) {
+      return redirect("/on-boarding", RedirectType.replace);
     }
     return (
         <div className="overflow-y-auto">
