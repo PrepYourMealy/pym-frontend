@@ -32,7 +32,7 @@ export function RecipeDialog({recipe, selectedRecipe, onClick}: Props) {
                         <p className="text-sm text-muted-foreground mb-4">
                             {recipe.description}
                         </p>
-                        <div className="flex flex-row gap-3">
+                        <div className="flex flex-row gap-2">
                             {recipe.tags.map((tag) => <Badge>
                                     {tag}
                                 </Badge>

@@ -17,7 +17,7 @@ export function MenuDayCard({day, dayName, selectedRecipe, setSelectedRecipe}: P
         </CardHeader>
         <CardContent>
             {day.breakfast && <div className="mb-4 last:mb-0">
-                <h3 className="font-semibold text-lg mb-2">Morgen: {day.breakfast.name}</h3>
+                <h3 className="font-semibold text-lg mb-2">Morgens: {day.breakfast.name}</h3>
                 <div className="flex items-center text-sm text-muted-foreground mb-2">
                     <Clock className="w-4 h-4 mr-1"/>
                     <span>{day.breakfast.cookTime + day.breakfast.cookTime} min</span>
