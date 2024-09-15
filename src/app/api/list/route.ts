@@ -10,7 +10,9 @@ const GET = async (_req: NextRequest) => {
         return new Response("Unauthorized", {status: 401});
     }
     const response = await fetch(`${env.APPLICATION_SERVER_URL}${API}${API_VERSION}${LIST_ENDPOINT}/${userId}`)
+    console.log(response)
     const data = await response.json();
+    console.log(JSON.stringify(data));
     if (!response.ok) {
         return new Response("Menu creation failed", {status: 500});
     }
