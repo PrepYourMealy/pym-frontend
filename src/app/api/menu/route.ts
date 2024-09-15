@@ -33,9 +33,7 @@ const GET = async (_req: NextRequest) => {
             "Accept": "application/json",
         }
     })
-    console.log(response)
     const menu = await response.json();
-    console.log(JSON.stringify(menu));
     if (!response.ok) {
         return new Response("Menu creation failed", {status: 500});
     }
