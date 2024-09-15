@@ -8,14 +8,19 @@ import {useEffect, useState} from "react";
 export default function DiscountsPage() {
     const [discounts, setDiscounts] = useState([]);
     useEffect(() => {
-       fetch(`${env.APPLICATION_SERVER_URL}${API}${API_VERSION}${DISCOUNT_ENDPOINT}`)
-              .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Network response was not ok");
-                    }
-                    return response.json();
-              })
-              .then(setDiscounts)
+        fetch('/api/discount', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+            }
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(setDiscounts)
     }, []);
 
     return (
