@@ -53,7 +53,7 @@ export function RecipeDialog({recipe, selectedRecipe, onClick}: Props) {
                                 <li key={index}>{ingredient.name}</li>
                             ))}
                         </ul>
-                        <h4 className="font-semibold mb-2">Zubereitung:</h4>
+                        <h4 className="font-semibold mb-2 mt-2">Zubereitung:</h4>
                         <ol className="list-decimal space-y-1 pl-4">
                             {recipe.steps.map((step, index) => (
                                 <li key={index}>
