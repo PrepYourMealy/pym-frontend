@@ -5,7 +5,8 @@ import { Page, Text, View, Document, StyleSheet } from "@react-pdf/renderer";
 interface ShoppingItem {
   name: string;
   price: number;
-  quantity: string;
+  quantity: number;
+  unit: string;
   origin: string;
 }
 
@@ -72,7 +73,7 @@ function ShoppingListPDF({ list }: ShoppingListProps) {
               <View>
                 <Text style={styles.itemName}>{item.name}</Text>
                 <Text style={styles.itemDetails}>
-                  {item.quantity} - {item.origin}
+                  {item.quantity} {item.quantity} - {item.origin}
                 </Text>
               </View>
               <Text style={styles.itemPrice}>{item.price.toFixed(2)} €</Text>
