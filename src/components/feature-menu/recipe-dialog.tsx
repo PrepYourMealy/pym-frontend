@@ -23,7 +23,7 @@ export function RecipeDialog({recipe, selectedRecipe, onClick}: Props) {
                         className="w-full"
                         onClick={() => onClick(recipe)}
                     >
-                        View Recipe
+                        Zum Rezept
                     </Button>
                 </DialogTrigger>
                 {recipe === selectedRecipe && <DialogContent>
