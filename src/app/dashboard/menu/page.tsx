@@ -1,13 +1,12 @@
 "use client";
-import {MenuDayView} from "~/components/feature-menu/menu-day";
-
-import {Separator} from "~/components/ui/separator";
-import {Menu, MenuDay} from "~/server/domain/types";
 import {Button} from "~/components/ui/button";
 import {useEffect, useState} from "react";
+import {Menu, Recipe} from "~/server/domain/types";
+import {MenuDayCard} from "~/components/feature-menu/menu-day-card";
 
 export default function ShoppingListPage() {
     const [menu, setMenu] = useState<Menu | null>(null);
+    const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
     useEffect(() => {
         fetch("/api/menu", {
             method: "GET",
@@ -33,10 +32,10 @@ export default function ShoppingListPage() {
                 "Content-Type": "application/json",
             },
         }).then((response) => {
-                if (!response.ok) {
-                    throw new Error("Network response was not ok");
-                }
-            })
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+        })
 
     }
 
@@ -53,18 +52,12 @@ export default function ShoppingListPage() {
         };
 
         return (
-            <div className="overflow-y-auto">
-                <div className="flex justify-between items-center">
-                    <h1>Menu</h1>
-
-                </div>
-                <Separator/>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                    {dayKeys.map((dayKey) => (
-                        <MenuDayView day={dayMap[dayKey]!} menu={menu![dayKey] as unknown as MenuDay}/>
-                    ))}
-
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {dayKeys.map((key) => (
+                    <div key={key}>
+                       <MenuDayCard day={menu[key]!} dayName={dayMap[key]!} selectedRecipe={selectedRecipe} setSelectedRecipe={setSelectedRecipe} />
+                    </div>
+                ))}
             </div>
         );
     } else {
@@ -74,7 +67,8 @@ export default function ShoppingListPage() {
             <Button onClick={regenerateMenu}>
                 Neues Menu erstellen
             </Button>
-        </div>;
+        </div>
+            ;
     }
 
 }

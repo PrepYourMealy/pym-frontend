@@ -20,24 +20,41 @@ export type Ingredient = {
 };
 
 export type Step = {
-    [key: string]: string | null;
+    [key: string]: string | number | null;
     description: string;
+    duration: number;
+}
+
+export type Recipe = {
+    [key: string]: string | Ingredient[] | Step[] | string[] | number;
+  name: string,
+  description: string,
+  ingredients: Ingredient[],
+  steps: Step[],
+  tags: string[],
+  prepTime: number,
+  cookTime: number,
+  servings: number,
+}
+
+export type DayMenu = {
+    [key: string]: Recipe | null;
+    breakfast: Recipe | null;
+    lunch: Recipe | null;
+    dinner: Recipe | null;
 }
 
 export type Menu = {
-  [key: string]: Step[] | string | null | Ingredient[] | number;
-  name: string;
-  ingredients: Ingredient[];
-  steps: Step[];
-  caloriesPerPersion: number;
+  [key: string]: DayMenu | null;
+  mon: DayMenu;
+  tue: DayMenu;
+  wed: DayMenu;
+  thu: DayMenu;
+  fri: DayMenu;
+  sat: DayMenu;
+  sun: DayMenu;
 };
 
-export type MenuDay = {
-  [key: string]: Menu | null;
-  breakfast: Menu | null;
-  lunch: Menu | null;
-  dinner: Menu | null;
-};
 
 export type ShoppingListItem = {
   [key: string]: number | string | null;
@@ -53,19 +70,7 @@ export type ShoppingList = {
   items: ShoppingListItem[];
 };
 
-export type WeekMenu = {
-  [key: string]: MenuDay | ShoppingList | null | number | string;
-  id: number;
-  userId: string;
-  mon: MenuDay;
-  tue: MenuDay;
-  wen: MenuDay;
-  thu: MenuDay;
-  fri: MenuDay;
-  sat: MenuDay;
-  sun: MenuDay;
-  list: ShoppingList;
-};
+
 
 export type User = {
   [key: string]: string | number | null | string[] | boolean;
