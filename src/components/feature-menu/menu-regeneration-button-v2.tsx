@@ -125,6 +125,6 @@ export function MenuRegenerationButtonV2() {
             </Tooltip>
         </TooltipProvider>
     } else {
-        return <Skeleton className="w-14 h-14 border-r-[50%]"/>
+        return <Skeleton className="w-8 h-8 border-r-[50%]"/>
     }
 }
