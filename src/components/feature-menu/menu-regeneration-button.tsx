@@ -64,7 +64,7 @@ export function MenuRegenerationButton() {
     return <Button
         onClick={handleRegenerate}
         disabled={isRegenerating || user!.stats!.weeklyRegenerateRequest >= user!.limits!.regenerateRequestsPerWeek}
-        className="w-full h-16 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed bg-gray-800"
+        className="w-48 h-16 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed bg-gray-800"
     >
         <div className="absolute left-0 top-0 bottom-0 flex items-center justify-center w-16">
             <svg className="w-12 h-12" viewBox="0 0 100 100">
@@ -95,7 +95,7 @@ export function MenuRegenerationButton() {
                     textAnchor="middle"
                     alignmentBaseline="central"
                 >
-                    {user?.stats?.weeklyRegenerateRequest}
+                    {user!.limits!.regenerateRequestsPerWeek! - user!.stats!.weeklyRegenerateRequest!}
                 </text>
             </svg>
         </div>
