@@ -20,7 +20,7 @@ export function MenuDayCard({day, dayName, selectedRecipe, setSelectedRecipe}: P
                 <h3 className="font-semibold text-lg mb-2">Morgens: {day.breakfast.name}</h3>
                 <div className="flex items-center text-sm text-muted-foreground mb-2">
                     <Clock className="w-4 h-4 mr-1"/>
-                    <span>{day.breakfast.cookTime + day.breakfast.cookTime} min</span>
+                    <span>{day.breakfast.cookTime} min</span>
                 </div>
                 <RecipeDialog recipe={day.breakfast} selectedRecipe={selectedRecipe} onClick={setSelectedRecipe} />
             </div>}
@@ -28,7 +28,7 @@ export function MenuDayCard({day, dayName, selectedRecipe, setSelectedRecipe}: P
                 <h3 className="font-semibold text-lg mb-2">Mittag: {day.lunch.name}</h3>
                 <div className="flex items-center text-sm text-muted-foreground mb-2">
                     <Clock className="w-4 h-4 mr-1"/>
-                    <span>{day.lunch.cookTime + day.lunch.cookTime} min</span>
+                    <span>{day.lunch.cookTime} min</span>
 
                 </div>
                 <RecipeDialog recipe={day.lunch} selectedRecipe={selectedRecipe} onClick={setSelectedRecipe} />
@@ -37,7 +37,7 @@ export function MenuDayCard({day, dayName, selectedRecipe, setSelectedRecipe}: P
                 <h3 className="font-semibold text-lg mb-2">Abend: {day.dinner.name}</h3>
                 <div className="flex items-center text-sm text-muted-foreground mb-2">
                     <Clock className="w-4 h-4 mr-1"/>
-                    <span>{day.dinner.cookTime + day.dinner.cookTime} min</span>
+                    <span>{day.dinner.cookTime} min</span>
 
                 </div>
                 <RecipeDialog recipe={day.dinner} selectedRecipe={selectedRecipe} onClick={setSelectedRecipe} />
