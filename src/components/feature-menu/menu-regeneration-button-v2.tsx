@@ -113,12 +113,12 @@ export function MenuRegenerationButtonV2() {
                             </div>
                         </Button>
                         <span className="sr-only">
-                  {user.stats?.weeklyRegenerateRequest!} von {user.limits?.regenerateRequestsPerWeek!} Neugenerierungen möglich. Klicke um die Regenierung zu starten.
+                  {user.limits?.regenerateRequestsPerWeek! - user.stats?.weeklyRegenerateRequest!} Neugenerierungen möglich. Klicke um die Regenierung zu starten.
                 </span>
                     </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                    <p>{user.stats?.weeklyRegenerateRequest!}/{user.limits?.regenerateRequestsPerWeek!} Neugenerierungen
+                    <p>{user.limits?.regenerateRequestsPerWeek! - user.stats?.weeklyRegenerateRequest!} Neugenerierungen
                         möglich</p>
                 </TooltipContent>
             </Tooltip>
