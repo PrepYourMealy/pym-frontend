@@ -4,6 +4,8 @@ import {Menu, Recipe} from "~/server/domain/types";
 import {MenuDayCard} from "~/components/feature-menu/menu-day-card";
 import {MenuCardSkeleton} from "~/components/feature-menu/menu-card-skeleton";
 import {MenuRegenerationButton} from "~/components/feature-menu/menu-regeneration-button";
+import {DashboardNav} from "~/components/feature-common/dashboard-nav";
+import {DashboardContent} from "~/components/feature-common/dashboard-content";
 
 export default function ShoppingListPage() {
     const [isFetching, setIsFetching] = useState(true);
@@ -42,19 +44,25 @@ export default function ShoppingListPage() {
 
     return (
         <div>
-            <div className="flex flex-row-reverse items-center py-2">
-                {!menu && <div>Kein Menü gefunden</div>}
-                <MenuRegenerationButton />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                {menu && dayKeys.map((key) => (
-                    <div key={key}>
-                        <MenuDayCard day={menu[key]!} dayName={dayMap[key]!} selectedRecipe={selectedRecipe}
-                                     setSelectedRecipe={setSelectedRecipe}/>
+            <DashboardNav title="Menü"/>
+            <DashboardContent>
+                <>
+                    <div className="flex flex-row-reverse items-center pb-2">
+                        {!menu && <div>Kein Menü gefunden</div>}
+                        <MenuRegenerationButton/>
                     </div>
-                ))}
-                {isFetching && [...Array(6)].map((_, index) => <div key={index}><MenuCardSkeleton/></div>)}
-            </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                        {menu && dayKeys.map((key) => (
+                            <div key={key}>
+                                <MenuDayCard day={menu[key]!} dayName={dayMap[key]!} selectedRecipe={selectedRecipe}
+                                             setSelectedRecipe={setSelectedRecipe}/>
+                            </div>
+                        ))}
+                        {isFetching && [...Array(6)].map((_, index) => <div key={index}><MenuCardSkeleton/></div>)}
+                    </div>
+                </>
+            </DashboardContent>
+
         </div>
     );
 

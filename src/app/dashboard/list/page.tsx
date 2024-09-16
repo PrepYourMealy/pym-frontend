@@ -3,6 +3,8 @@
 import {ShoppingItem, ShoppingList} from "~/components/feature-menu/shopping-list";
 import {Separator} from "~/components/ui/separator";
 import {useEffect, useState} from "react";
+import {DashboardNav} from "~/components/feature-common/dashboard-nav";
+import {DashboardContent} from "~/components/feature-common/dashboard-content";
 
 export default function ShoppingListPage() {
     const [list, setList] = useState([]);
@@ -28,14 +30,15 @@ export default function ShoppingListPage() {
     }
     return (
         <div className="overflow-y-auto">
-            <h1>Einkaufsliste</h1>
-            <Separator/>
-            <div className="flex w-full flex-row items-center justify-center pt-4">
-                <ShoppingList list={list as unknown as {
-                    total: number;
-                    items: ShoppingItem[];
-                }}/>
-            </div>
+            <DashboardNav title="Einkaufsliste"/>
+            <DashboardContent>
+                <div className="flex w-full flex-row items-center justify-center">
+                    <ShoppingList list={list as unknown as {
+                        total: number;
+                        items: ShoppingItem[];
+                    }}/>
+                </div>
+            </DashboardContent>
         </div>);
 
 

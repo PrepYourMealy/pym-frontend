@@ -2,6 +2,8 @@
 import {DiscountSearch} from "~/components/feature-discounts/discount-search";
 import {Separator} from "~/components/ui/separator";
 import {useEffect, useState} from "react";
+import {DashboardNav} from "~/components/feature-common/dashboard-nav";
+import {DashboardContent} from "~/components/feature-common/dashboard-content";
 
 export default function DiscountsPage() {
     const [discounts, setDiscounts] = useState([]);
@@ -22,10 +24,11 @@ export default function DiscountsPage() {
     }, []);
 
     return (
-        <div className="overflow-y-auto">
-            <h1>Rabatte</h1>
-            <Separator/>
-            <DiscountSearch products={discounts}/>
-        </div>
+        <>
+            <DashboardNav title="Rabatte"/>
+            <DashboardContent>
+                <DiscountSearch products={discounts}/>
+            </DashboardContent>
+        </>
     );
 }
