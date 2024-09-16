@@ -6,6 +6,7 @@ import {MenuCardSkeleton} from "~/components/feature-menu/menu-card-skeleton";
 import {MenuRegenerationButton} from "~/components/feature-menu/menu-regeneration-button";
 import {DashboardNav} from "~/components/feature-common/dashboard-nav";
 import {DashboardContent} from "~/components/feature-common/dashboard-content";
+import {MenuRegenerationButtonV2} from "~/components/feature-menu/menu-regeneration-button-v2";
 
 export default function ShoppingListPage() {
     const [isFetching, setIsFetching] = useState(true);
@@ -44,7 +45,9 @@ export default function ShoppingListPage() {
 
     return (
         <div>
-            <DashboardNav title="Menü"/>
+            <DashboardNav title="Menü">
+                <MenuRegenerationButtonV2/>
+            </DashboardNav>
             <DashboardContent>
                 <>
                     <div className="flex flex-row-reverse items-center pb-2">
