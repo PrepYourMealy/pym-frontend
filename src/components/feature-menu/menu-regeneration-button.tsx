@@ -64,10 +64,10 @@ export function MenuRegenerationButton() {
     return <Button
         onClick={handleRegenerate}
         disabled={isRegenerating || user!.stats!.weeklyRegenerateRequest >= user!.limits!.regenerateRequestsPerWeek}
-        className="w-48 h-16 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed bg-gray-800"
+        className="px-4 py-2 relative overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed bg-gray-400 border-r-8"
     >
         <div className="absolute left-0 top-0 bottom-0 flex items-center justify-center w-16">
-            <svg className="w-12 h-12" viewBox="0 0 100 100">
+            <svg className="w-8 h-8" viewBox="0 0 100 100">
                 <circle
                     className="text-gray-600 stroke-current"
                     strokeWidth="8"
@@ -90,7 +90,7 @@ export function MenuRegenerationButton() {
                     x="50"
                     y="50"
                     fontFamily="sans-serif"
-                    fontSize="24"
+                    fontSize="14"
                     fill="white"
                     textAnchor="middle"
                     alignmentBaseline="central"
@@ -99,7 +99,7 @@ export function MenuRegenerationButton() {
                 </text>
             </svg>
         </div>
-        <div className="flex items-center justify-center ml-16">
+        <div className="flex items-center justify-center ml-4">
             <span>Regenerate Menu</span>
         </div>
         <span className="sr-only">
