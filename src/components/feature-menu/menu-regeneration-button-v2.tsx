@@ -75,7 +75,7 @@ export function MenuRegenerationButtonV2() {
                             className="group w-8 h-8 rounded-full overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center hover:w-[170px] hover:justify-start hover:pl-3 hover:rounded-full hover:bg-gray-100 hover:border hover:border-gray-300 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
                         >
                   <span
-                      className="absolute opacity-0 right-12 transition-opacity duration-300 whitespace-nowrap group-hover:opacity-100  group-hover:text-gray-800 group-hover:fill-gray-800">
+                      className="absolute opacity-0 left-20 transition-opacity duration-300 whitespace-nowrap group-hover:opacity-100  group-hover:text-gray-800 group-hover:fill-gray-800">
                    Neu generieren
                   </span>
                             <div className="flex-shrink-0 w-8 h-8">
