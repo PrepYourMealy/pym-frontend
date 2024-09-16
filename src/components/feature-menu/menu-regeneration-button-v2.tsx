@@ -104,6 +104,7 @@ export function MenuRegenerationButtonV2() {
                                         fontFamily="sans-serif"
                                         fontSize="24"
                                         fill="currentColor"
+                                        className="transition-colors duration-300 group-hover:fill-black"
                                         textAnchor="middle"
                                         alignmentBaseline="central"
                                     >
