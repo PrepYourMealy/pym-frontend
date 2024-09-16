@@ -64,7 +64,7 @@ export function MenuRegenerationButton() {
     return <Button
         onClick={handleRegenerate}
         disabled={isRegenerating || user!.stats!.weeklyRegenerateRequest >= user!.limits!.regenerateRequestsPerWeek}
-        className="px-4 py-2 flex flex-row gap-4 items-center justify-items-start overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed bg-gray-800 border-r-8"
+        className="px-2 py-4 flex flex-row gap-2 items-center justify-items-start overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed bg-gray-800"
     >
 
         <svg className="w-8 h-8" viewBox="0 0 100 100">
