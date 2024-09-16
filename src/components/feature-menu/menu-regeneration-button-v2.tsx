@@ -72,13 +72,13 @@ export function MenuRegenerationButtonV2() {
                         <Button
                             onClick={handleRegenerate}
                             disabled={isRegenerating || user.stats!.weeklyRegenerateRequest! >= user.limits!.regenerateRequestsPerWeek!}
-                            className="group w-6 h-6 rounded-full overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center hover:w-[170px] hover:justify-start hover:pl-3 hover:rounded-full hover:bg-gray-100 hover:border hover:border-gray-300 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                            className="group w-8 h-8 rounded-full overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center hover:w-[170px] hover:justify-start hover:pl-3 hover:rounded-full hover:bg-gray-100 hover:border hover:border-gray-300 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
                         >
                   <span
-                      className="absolute left-6 opacity-0 transition-opacity duration-300 whitespace-nowrap group-hover:opacity-100 text-gray-800">
+                      className="absolute left-8 opacity-0 transition-opacity duration-300 whitespace-nowrap group-hover:opacity-100 text-gray-800">
                    Neu generieren
                   </span>
-                            <div className="flex-shrink-0 w-6 h-6">
+                            <div className="flex-shrink-0 w-8 h-8">
                                 <svg className="w-full h-full" viewBox="0 0 100 100">
                                     <circle
                                         className="text-gray-200 stroke-current"
@@ -113,12 +113,13 @@ export function MenuRegenerationButtonV2() {
                             </div>
                         </Button>
                         <span className="sr-only">
-                  {user.limits?.regenerateRequestsPerWeek!} von {user.stats?.weeklyRegenerateRequest!} Neugenerierungen möglich. Klicke um die Regenierung zu starten.
+                  {user.stats?.weeklyRegenerateRequest!} von {user.limits?.regenerateRequestsPerWeek!} Neugenerierungen möglich. Klicke um die Regenierung zu starten.
                 </span>
                     </div>
                 </TooltipTrigger>
                 <TooltipContent>
-                    <p>{user.limits?.regenerateRequestsPerWeek!}/{user.stats?.weeklyRegenerateRequest} Neugenerierungen möglich</p>
+                    <p>{user.stats?.weeklyRegenerateRequest!}/{user.limits?.regenerateRequestsPerWeek!} Neugenerierungen
+                        möglich</p>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
