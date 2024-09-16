@@ -85,3 +85,20 @@ export type User = {
   likedIngredients: string[] | null;
   people: number | null;
 };
+
+export type UserStats = {
+  [key: string]: number
+  weeklyRegenerateRequest: number
+}
+
+export type UserLimits = {
+  [key: string]: number
+  regenerateRequestsPerWeek: number
+}
+
+export type UserModel = {
+    [key: string]: string | UserStats | UserLimits | null;
+    id: string;
+    stats: UserStats | null;
+    limits: UserLimits | null;
+}

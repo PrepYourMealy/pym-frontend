@@ -1,9 +1,9 @@
 "use client";
-import {Button} from "~/components/ui/button";
 import {useEffect, useState} from "react";
 import {Menu, Recipe} from "~/server/domain/types";
 import {MenuDayCard} from "~/components/feature-menu/menu-day-card";
 import {MenuCardSkeleton} from "~/components/feature-menu/menu-card-skeleton";
+import {MenuRegenerationButton} from "~/components/feature-menu/menu-regeneration-button";
 
 export default function ShoppingListPage() {
     const [isFetching, setIsFetching] = useState(true);
@@ -29,20 +29,6 @@ export default function ShoppingListPage() {
             })
     }, []);
 
-    const regenerateMenu = () => {
-        fetch("/api/menu", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        }).then((response) => {
-            if (!response.ok) {
-                throw new Error("Network response was not ok");
-            }
-        })
-
-    }
-
     const dayKeys = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
     const dayMap: Record<string, string> = {
         mon: "Montag",
@@ -58,9 +44,7 @@ export default function ShoppingListPage() {
         <div>
             <div className="flex flex-row-reverse items-center py-2">
                 {!menu && <div>Kein Menü gefunden</div>}
-                <Button onClick={regenerateMenu}>
-                    Neu generieren
-                </Button>
+                <MenuRegenerationButton />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 {menu && dayKeys.map((key) => (
