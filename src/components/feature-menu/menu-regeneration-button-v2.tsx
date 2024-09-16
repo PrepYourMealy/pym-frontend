@@ -78,7 +78,7 @@ export function MenuRegenerationButtonV2() {
                       className="absolute left-6 opacity-0 transition-opacity duration-300 whitespace-nowrap group-hover:opacity-100 text-gray-800">
                    Neu generieren
                   </span>
-                            <div className="flex-shrink-0 w-10 h-10">
+                            <div className="flex-shrink-0 w-6 h-6">
                                 <svg className="w-full h-full" viewBox="0 0 100 100">
                                     <circle
                                         className="text-gray-200 stroke-current"
