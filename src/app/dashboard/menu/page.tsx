@@ -44,7 +44,7 @@ export default function ShoppingListPage() {
     };
 
     return (
-        <div>
+        <>
             <DashboardNav title="Menü">
                 <MenuRegenerationButtonV2/>
             </DashboardNav>
@@ -66,7 +66,7 @@ export default function ShoppingListPage() {
                 </>
             </DashboardContent>
 
-        </div>
+        </>
     );
 
 }

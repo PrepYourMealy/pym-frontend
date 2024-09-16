@@ -72,10 +72,10 @@ export function MenuRegenerationButtonV2() {
                         <Button
                             onClick={handleRegenerate}
                             disabled={isRegenerating || user.stats!.weeklyRegenerateRequest! >= user.limits!.regenerateRequestsPerWeek!}
-                            className="group w-14 h-14 rounded-full overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center hover:w-[170px] hover:justify-start hover:pl-3 hover:rounded-full hover:bg-gray-100 hover:border hover:border-gray-300 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                            className="group w-6 h-6 rounded-full overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center hover:w-[170px] hover:justify-start hover:pl-3 hover:rounded-full hover:bg-gray-100 hover:border hover:border-gray-300 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
                         >
                   <span
-                      className="absolute left-14 opacity-0 transition-opacity duration-300 whitespace-nowrap group-hover:opacity-100 text-gray-800">
+                      className="absolute left-6 opacity-0 transition-opacity duration-300 whitespace-nowrap group-hover:opacity-100 text-gray-800">
                    Neu generieren
                   </span>
                             <div className="flex-shrink-0 w-10 h-10">
