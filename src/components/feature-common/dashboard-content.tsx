@@ -6,7 +6,7 @@ interface Props {
 
 export function DashboardContent({children}: Props) {
     return (
-        <main className="p-2 overflow-y-auto">
+        <main className="p-2 mt-2 overflow-y-auto">
             {children}
         </main>
     );
