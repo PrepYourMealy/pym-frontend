@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/menu/route": "app/api/menu/route.js",
+  "/api/discount/route": "app/api/discount/route.js",
+  "/api/list/route": "app/api/list/route.js",
+  "/api/settings/init/route": "app/api/settings/init/route.js",
+  "/on-boarding/page": "app/on-boarding/page.js",
+  "/page": "app/page.js",
+  "/dashboard/discounts/page": "app/dashboard/discounts/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/settings/page": "app/dashboard/settings/page.js",
+  "/dashboard/list/page": "app/dashboard/list/page.js",
+  "/dashboard/menu/page": "app/dashboard/menu/page.js"
+}

@@ -1,0 +1,95 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/app/_not-found/page-070466cd643403c7.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/css/cedea058d8b02b4b.css",
+      "static/chunks/202-a245f44dbb3440e8.js",
+      "static/chunks/app/layout-c287ae0939970f98.js"
+    ],
+    "/on-boarding/page": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/263-04effd2f2cac54d6.js",
+      "static/chunks/app/on-boarding/page-17334ded7df5a52f.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/263-04effd2f2cac54d6.js",
+      "static/chunks/202-a245f44dbb3440e8.js",
+      "static/chunks/403-246b907d652fbd13.js",
+      "static/chunks/214-16a3f9ab30428572.js",
+      "static/chunks/app/page-968b6fe29f438fba.js"
+    ],
+    "/dashboard/discounts/page": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/263-04effd2f2cac54d6.js",
+      "static/chunks/app/dashboard/discounts/page-8abea99ebac6f6bf.js"
+    ],
+    "/dashboard/layout": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/84fbfe7f-5a571c5184fb6dc1.js",
+      "static/chunks/263-04effd2f2cac54d6.js",
+      "static/chunks/202-a245f44dbb3440e8.js",
+      "static/chunks/615-89cd142eed997886.js",
+      "static/chunks/403-246b907d652fbd13.js",
+      "static/chunks/app/dashboard/layout-673f11d7393cdf90.js"
+    ],
+    "/dashboard/page": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/app/dashboard/page-6bc91dc9baf5d1a5.js"
+    ],
+    "/dashboard/settings/page": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/app/dashboard/settings/page-954e6fcf6a6b3cf5.js"
+    ],
+    "/dashboard/list/page": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/cbbc2011-1173282739477c03.js",
+      "static/chunks/a54823bb-7a3e6b91523896c7.js",
+      "static/chunks/f204187f-ce065763d46d2cf7.js",
+      "static/chunks/263-04effd2f2cac54d6.js",
+      "static/chunks/29-8a33b67355d1b327.js",
+      "static/chunks/app/dashboard/list/page-1fe3579a9b8eccf2.js"
+    ],
+    "/dashboard/menu/page": [
+      "static/chunks/webpack-c0c9b5acec7deef2.js",
+      "static/chunks/e4649e61-2869e4ade85c76af.js",
+      "static/chunks/623-b2454788c08ddc5c.js",
+      "static/chunks/main-app-8dd119e1555e6660.js",
+      "static/chunks/84fbfe7f-5a571c5184fb6dc1.js",
+      "static/chunks/263-04effd2f2cac54d6.js",
+      "static/chunks/615-89cd142eed997886.js",
+      "static/chunks/app/dashboard/menu/page-4c86058ac48b86b3.js"
+    ]
+  }
+}
