@@ -50,15 +50,23 @@ export default function ShoppingListPage() {
                 <MenuRegenerationButtonV2/>
             </DashboardNav>
             <DashboardContent>
-                <div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 overflow-y-scroll">
-                        {menu && dayKeys.map((key) => (
-                            <div key={key}>
-                                <MenuDayCard day={menu[key]!} dayName={dayMap[key]!} selectedRecipe={selectedRecipe}
-                                             setSelectedRecipe={setSelectedRecipe}/>
-                            </div>
-                        ))}
-                        {isFetching && [...Array(6)].map((_, index) => <div key={index}><MenuCardSkeleton/></div>)}
+                <div className="relative flex flex-col h-full">
+                    <div className="flex-grow overflow-y-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                            {menu && dayKeys.map((key) => (
+                                <div key={key}>
+                                    <MenuDayCard
+                                        day={menu[key]!}
+                                        dayName={dayMap[key]!}
+                                        selectedRecipe={selectedRecipe}
+                                        setSelectedRecipe={setSelectedRecipe}
+                                    />
+                                </div>
+                            ))}
+                            {isFetching && [...Array(6)].map((_, index) => (
+                                <div key={index}><MenuCardSkeleton/></div>
+                            ))}
+                        </div>
                     </div>
                     <LlmPrompt/>
                 </div>

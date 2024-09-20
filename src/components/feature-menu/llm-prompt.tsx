@@ -36,7 +36,8 @@ export function LlmPrompt({ maxInteractions = 5 }: { maxInteractions?: number })
         <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-background to-background/0 pt-6">
             <div className="max-w-3xl mx-auto px-4">
                 <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-lg blur"></div>
+                    <div
+                        className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-lg blur"></div>
                     <Textarea
                         ref={textareaRef}
                         placeholder="Send a message"
@@ -53,17 +54,17 @@ export function LlmPrompt({ maxInteractions = 5 }: { maxInteractions?: number })
                         disabled={interactionsLeft === 0 || !prompt.trim()}
                         className="absolute right-2 bottom-2 h-8 w-8 bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 ease-in-out"
                     >
-                        <ArrowUpIcon className="h-4 w-4" />
+                        <ArrowUpIcon className="h-4 w-4"/>
                         <span className="sr-only">Send message</span>
                     </Button>
                 </div>
                 <div className="mt-2 flex justify-between text-xs text-muted-foreground">
-          <span className="transition-all duration-300 ease-in-out">
-            {150 - prompt.length} character{150 - prompt.length !== 1 ? 's' : ''} remaining
-          </span>
+            <span className="transition-all duration-300 ease-in-out">
+                {150 - prompt.length} character{150 - prompt.length !== 1 ? 's' : ''} remaining
+            </span>
                     <span className="font-semibold transition-all duration-300 ease-in-out">
-            {interactionsLeft} interaction{interactionsLeft !== 1 ? 's' : ''} left
-          </span>
+                {interactionsLeft} interaction{interactionsLeft !== 1 ? 's' : ''} left
+            </span>
                 </div>
             </div>
         </div>
