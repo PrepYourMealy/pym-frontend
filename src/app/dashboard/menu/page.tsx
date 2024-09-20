@@ -7,6 +7,7 @@ import {MenuRegenerationButton} from "~/components/feature-menu/menu-regeneratio
 import {DashboardNav} from "~/components/feature-common/dashboard-nav";
 import {DashboardContent} from "~/components/feature-common/dashboard-content";
 import {MenuRegenerationButtonV2} from "~/components/feature-menu/menu-regeneration-button-v2";
+import {LlmPrompt} from "~/components/feature-menu/llm-prompt";
 
 export default function ShoppingListPage() {
     const [isFetching, setIsFetching] = useState(true);
@@ -49,8 +50,8 @@ export default function ShoppingListPage() {
                 <MenuRegenerationButtonV2/>
             </DashboardNav>
             <DashboardContent>
-                <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                <div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 overflow-y-scroll">
                         {menu && dayKeys.map((key) => (
                             <div key={key}>
                                 <MenuDayCard day={menu[key]!} dayName={dayMap[key]!} selectedRecipe={selectedRecipe}
@@ -59,7 +60,8 @@ export default function ShoppingListPage() {
                         ))}
                         {isFetching && [...Array(6)].map((_, index) => <div key={index}><MenuCardSkeleton/></div>)}
                     </div>
-                </>
+                    <LlmPrompt/>
+                </div>
             </DashboardContent>
 
         </>
