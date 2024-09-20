@@ -49,9 +49,9 @@ export default function ShoppingListPage() {
                 <MenuRegenerationButtonV2/>
             </DashboardNav>
             <DashboardContent>
-                <div className="relative flex flex-col h-full">
-                    <div className="flex-grow overflow-y-auto">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+                <div className="flex flex-col h-full">
+                    <div className="overflow-y-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 ">
                             {menu && dayKeys.map((key) => (
                                 <div key={key}>
                                     <MenuDayCard
