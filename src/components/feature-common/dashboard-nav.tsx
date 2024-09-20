@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function DashboardNav({title, children}: Props) {
-    return <div className="fixed top-0 left-0 right-0 flex w-full flex-row justify-between items-center bg-white z-50">
+    return <div className="fixed top-0 left-0 right-0 flex w-full flex-row justify-between items-center bg-background z-50">
         <div className="flex flex-row gap-2 items-center">
             <SidebarTrigger/>
             <h1 className="text-md font-bold">{title}</h1>
