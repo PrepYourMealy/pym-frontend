@@ -33,7 +33,7 @@ export function LlmPrompt({ maxInteractions = 5 }: { maxInteractions?: number })
     }
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-background to-background/0 pt-6">
+        <div className="fixed bottom-0 w-full right-0 bg-white py-6">
             <div className="max-w-3xl mx-auto px-4">
                 <div className="relative">
                     <div
@@ -60,7 +60,7 @@ export function LlmPrompt({ maxInteractions = 5 }: { maxInteractions?: number })
                 </div>
                 <div className="mt-2 flex justify-between text-xs text-muted-foreground">
             <span className="transition-all duration-300 ease-in-out">
-                {150 - prompt.length} character{150 - prompt.length !== 1 ? 's' : ''} remaining
+                {150 - prompt.length}/150
             </span>
                     <span className="font-semibold transition-all duration-300 ease-in-out">
                 {interactionsLeft} interaction{interactionsLeft !== 1 ? 's' : ''} left

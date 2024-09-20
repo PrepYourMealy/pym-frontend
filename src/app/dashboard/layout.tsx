@@ -12,7 +12,7 @@ export default function Layout({children}: { children: ReactNode }) {
             >
                 <AppSidebar/>
                 <main className="flex flex-1 flex-col p-2 transition-all duration-300 ease-in-out">
-                    <div className="h-full rounded-md border-2 border-dashed p-2 border-green-900">
+                    <div className="h-full rounded-md p-2">
                         {children}
                     </div>
                 </main>
