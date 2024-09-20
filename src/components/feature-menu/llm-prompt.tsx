@@ -33,7 +33,7 @@ export function LlmPrompt({ maxInteractions = 5 }: { maxInteractions?: number })
     }
 
     return (
-        <div className="fixed bottom-0 w-full right-0 left-0 bg-background py-6">
+        <div className="fixed bottom-0 w-full right-0 left-0 bg-gradient-to-t from-background to-background/0 py-6">
             <div className="max-w-3xl mx-auto px-4">
                 <div className="relative">
                     <div
