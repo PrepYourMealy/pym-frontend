@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import {Menu, Recipe} from "~/server/domain/types";
 import {MenuDayCard} from "~/components/feature-menu/menu-day-card";
 import {MenuCardSkeleton} from "~/components/feature-menu/menu-card-skeleton";
-import {MenuRegenerationButton} from "~/components/feature-menu/menu-regeneration-button";
 import {DashboardNav} from "~/components/feature-common/dashboard-nav";
 import {DashboardContent} from "~/components/feature-common/dashboard-content";
 import {MenuRegenerationButtonV2} from "~/components/feature-menu/menu-regeneration-button-v2";
@@ -71,7 +70,6 @@ export default function ShoppingListPage() {
                     <LlmPrompt/>
                 </div>
             </DashboardContent>
-
         </>
     );
 
