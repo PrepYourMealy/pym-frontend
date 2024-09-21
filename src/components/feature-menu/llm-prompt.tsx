@@ -33,8 +33,8 @@ export function LlmPrompt({ maxInteractions = 5 }: { maxInteractions?: number })
     }
 
     return (
-        <div className="sticky bottom-0 w-full bg-gradient-to-t from-background to-background/0 py-6">
-            <div className="max-w-3xl mx-auto px-4">
+        <div className="relative bottom-0 w-full bg-gradient-to-t from-background to-background/0 py-6">
+            <div className="absulute bottom-0 left-0 right-0 max-w-3xl mx-auto px-4">
                 <div className="relative">
                     <div
                         className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-primary/20 rounded-lg blur"></div>
