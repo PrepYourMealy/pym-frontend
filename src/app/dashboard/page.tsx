@@ -15,14 +15,12 @@ function getTimeOfDay(): string {
     const now = new Date();
     const hours = now.getHours();
 
-    if (hours >= 5 && hours < 12) {
+    if (hours >= 3 && hours < 12) {
         return "Morgen"; // Morning: 5 AM - 12 PM
     } else if (hours >= 12 && hours < 17) {
         return "Mittag"; // Midday: 12 PM - 5 PM
-    } else if (hours >= 17 && hours < 22) {
-        return "Abend"; // Evening: 5 PM - 10 PM
     } else {
-        return "Nacht"; // Night: 10 PM - 5 AM
+        return "Abend"; // Evening: 5 PM - 10 PM
     }
 }
 
