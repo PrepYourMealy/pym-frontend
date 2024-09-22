@@ -23,12 +23,13 @@ const PUT = async (req: NextRequest) => {
         console.error("Unauthorized");
         return new Response("Unauthorized", {status: 401});
     }
+    const body = await req.json();
     const response = await fetch(`${env.APPLICATION_SERVER_URL}${API}${API_VERSION}${LIST_ENDPOINT}/${userId}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(req.body),
+        body: JSON.stringify(body),
     })
     if (!response.ok) {
         return new Response("Menu update failed", {status: 500});
