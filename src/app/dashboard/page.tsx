@@ -61,7 +61,7 @@ export default function DashboardHome() {
         </DashboardNav>
         <DashboardContent>
             <>
-                <div className="text-2xl pb-2">Guten {germanTimeOfTheDay}!</div>
+                <div className="text-2xl pb-2 mt-[50px]">Guten {germanTimeOfTheDay}!</div>
                 <div className="text-lg py-2">Für heute sind folgende Gerichte geplant. Viel Spaß beim kochen!</div>
                 <div className="grid grid-cols-2 gap-4 pt-2 pb-4">
                     <Button className="bg-accent text-accent-foreground" asChild>
