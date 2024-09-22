@@ -7,6 +7,7 @@ import {
   Utensils,
   Send,
   Settings2,
+  House,
 } from "lucide-react";
 
 import { NavMain } from "./nav-main";
@@ -19,8 +20,14 @@ import {
   SidebarLabel,
 } from "./ui/sidebar";
 import React from "react";
+import {Separator} from "~/components/ui/separator";
 const data = {
   navMain: [
+    {
+      title: "Übersicht",
+      url: "/dashboard",
+      icon: House,
+    },
     {
       title: "Menu",
       url: "/dashboard/menu",
@@ -61,8 +68,9 @@ export function AppSidebar() {
   return (
     <Sidebar>
       <SidebarHeader>
-        <div className="line-clamp-1 flex-1 pr-2 font-medium">Mealy</div>
+        <div className="line-clamp-1 flex-1 pr-2 text-xl">Mealy</div>
       </SidebarHeader>
+      <Separator className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 h-1" />
       <SidebarContent>
         <SidebarItem>
           <SidebarLabel>Aktionen</SidebarLabel>

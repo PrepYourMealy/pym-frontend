@@ -1,0 +1,40 @@
+services:
+  mongo-express:
+    container_name: mongo-express
+    restart: unless-stopped
+    image: mongo-express:latest
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://db:27017/pym
+      - ME_CONFIG_MONGODB_ENABLE_ADMIN=false
+      - ME_CONFIG_BASICAUTH=false
+      - ME_CONFIG_SITE_BASEURL=/mongo
+    ports:
+        - "8081:8081"
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.mongo-express.rule=(Host(`dashboard.prepmymealy.app`) && PathPrefix(`/mongo`))'
+      - "traefik.http.services.mongo-express.loadbalancer.server.port=8081"
+      - "traefik.http.routers.mongo-express.entrypoints=websecure"
+      - "traefik.http.routers.mongo-express.tls.certresolver=myresolver"
+    depends_on:
+      - db
+  server:
+    image: ghcr.io/prepyourmealy/pym-application-server:prod
+    depends_on:
+      - db
+    restart: always
+    ports:
+      - "3000:3000"
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://db:27017/pym
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+  db:
+    image: mongo:latest
+    container_name: db
+    restart: always
+    volumes:
+      - db-data:/data/db
+volumes:
+  db-data:

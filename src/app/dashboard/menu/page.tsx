@@ -1,6 +1,6 @@
 "use client";
 import {useEffect, useState} from "react";
-import {Menu, Recipe} from "~/server/domain/types";
+import {Menu, Recipe, UserModel} from "~/server/domain/types";
 import {MenuDayCard} from "~/components/feature-menu/menu-day-card";
 import {MenuCardSkeleton} from "~/components/feature-menu/menu-card-skeleton";
 import {DashboardNav} from "~/components/feature-common/dashboard-nav";
@@ -10,6 +10,8 @@ import {LlmPrompt} from "~/components/feature-menu/llm-prompt";
 
 export default function ShoppingListPage() {
     const [isFetching, setIsFetching] = useState(true);
+    const [availableRegenerations, setAvailableRegenerations] = useState(0);
+    const [user, setUser] = useState<UserModel | null>(null);
     const [menu, setMenu] = useState<Menu | null>(null);
     const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
     useEffect(() => {
@@ -29,6 +31,22 @@ export default function ShoppingListPage() {
             .then((data) => {
                 setIsFetching(false);
                 setMenu(data);
+            })
+        fetch("/api/user", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setAvailableRegenerations(data.limits.regenerateRequestsPerWeek - data.stats.weeklyRegenerateRequest);
+                setUser(data);
             })
     }, []);
 
@@ -65,6 +83,36 @@ export default function ShoppingListPage() {
                             {isFetching && [...Array(6)].map((_, index) => (
                                 <div key={index}><MenuCardSkeleton/></div>
                             ))}
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
                         </div>
                     </div>
                     <LlmPrompt/>

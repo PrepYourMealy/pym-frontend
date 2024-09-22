@@ -11,7 +11,7 @@ export const env = createEnv({
       .enum(["development", "test", "production"])
       .default("development"),
     APPLICATION_SERVER_URL: z.string()
-        .default("http://server:3000"),
+        .default("http://localhost:3000"),
   },
 
   /**

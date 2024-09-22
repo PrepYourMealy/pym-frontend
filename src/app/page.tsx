@@ -1,6 +1,6 @@
 "use server";
 
-import { SignedIn } from "@clerk/nextjs";
+import {SignedIn, SignInButton} from "@clerk/nextjs";
 import { Benefits } from "~/components/feature-landing/benefits";
 import { Features } from "~/components/feature-landing/features";
 import { Footer } from "~/components/feature-landing/footer";
@@ -10,6 +10,7 @@ import { SignUp } from "~/components/feature-landing/sign-up";
 export default async function HomePage() {
   return (
     <div className="flex min-h-[100dvh] flex-col">
+      <SignInButton />
       <SignedIn>
         <Header />
         <main className="flex-1">
