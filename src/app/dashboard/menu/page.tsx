@@ -1,7 +1,6 @@
 "use client";
 import {useEffect, useState} from "react";
-import {Menu, Recipe, UserModel} from "~/server/domain/types";
-import {MenuCardSkeleton} from "~/components/feature-menu/menu-card-skeleton";
+import {type Menu, type UserModel} from "~/server/domain/types";
 import {DashboardNav} from "~/components/feature-common/dashboard-nav";
 import {DashboardContent} from "~/components/feature-common/dashboard-content";
 import {MenuRegenerationButtonV2} from "~/components/feature-menu/menu-regeneration-button-v2";
