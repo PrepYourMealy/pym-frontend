@@ -57,11 +57,13 @@ export type Menu = {
 
 
 export type ShoppingListItem = {
-  [key: string]: number | string | null;
+  [key: string]: number | string | null | boolean;
   name: string;
   price: number;
   quantity: string;
+  unit: string;
   origin: string;
+  bought: boolean;
 };
 
 export type ShoppingList = {
