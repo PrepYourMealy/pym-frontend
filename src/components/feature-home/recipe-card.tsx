@@ -9,16 +9,18 @@ import { ChevronDownIcon, ChevronUpIcon, ClockIcon, UsersIcon } from "lucide-rea
 import {Recipe} from "~/server/domain/types";
 
 interface Props {
-    recipe: Recipe
+    recipe: Recipe,
+    mealType?: string | null,
 }
 
-export function RecipeCard({recipe}: Props) {
+export function RecipeCard({recipe, mealType}: Props) {
     const [showIngredients, setShowIngredients] = useState(true)
     const [showSteps, setShowSteps] = useState(false)
 
     return (
         <Card className="w-full max-w-md mx-auto overflow-hidden">
             <CardHeader className="border-b bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white">
+                <CardTitle className="text-sm">{mealType}</CardTitle>
                 <CardTitle className="text-2xl font-bold mb-2">{recipe.name}</CardTitle>
                 <p className="text-white/90 mb-4">{recipe.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
