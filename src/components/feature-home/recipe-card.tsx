@@ -20,7 +20,7 @@ export function RecipeCard({recipe, mealType}: Props) {
     return (
         <Card className="w-full max-w-md mx-auto overflow-hidden">
             <CardHeader className="border-b bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white">
-                <CardTitle className="text-sm">{mealType}</CardTitle>
+                {mealType && <p className="text-sm">{mealType}</p>}
                 <CardTitle className="text-2xl font-bold mb-2">{recipe.name}</CardTitle>
                 <p className="text-white/90 mb-4">{recipe.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
