@@ -23,7 +23,7 @@ export function ShoppingListBought({items, toggleBought}: Props) {
                     className="w-full p-0 h-auto font-medium justify-between"
                     onClick={() => setShowBought(!showBought)}
                 >
-                    <span>Already Bought ({items.length})</span>
+                    <span>Gekauft ({items.length})</span>
                     {items.length > 0 && showBought ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                 </Button>
             </CardHeader>
