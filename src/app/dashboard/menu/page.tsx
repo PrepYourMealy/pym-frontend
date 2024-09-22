@@ -10,6 +10,7 @@ import {Separator} from "~/components/ui/separator";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "~/components/ui/tabs";
 import {RecipeCardSkeleton} from "~/components/feature-home/recipe-card-skeleton";
 import {RecipeCard} from "~/components/feature-home/recipe-card";
+import {Prompt} from "~/components/feature-menu/prompt";
 const dayKeys = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const dayMap: Record<string, string> = {
     mon: "Mo",
@@ -64,7 +65,7 @@ export default function ShoppingListPage() {
                     </div>
                     <Separator/>
 
-                    <Tabs defaultValue={currentDayKey} className="w-full transition-all">
+                    <Tabs defaultValue={currentDayKey} className="w-full transition-all mb-[100px]">
                         <TabsList className="grid w-full grid-cols-7 mt-2">
                             {Object.entries(dayMap).map(([key, value]) => (
                                 <TabsTrigger value={key}>{value}</TabsTrigger>))}
@@ -85,6 +86,7 @@ export default function ShoppingListPage() {
                             </TabsContent>
                         ))}
                     </Tabs>
+                    <Prompt />
                 </>
             </DashboardContent>
         </>
