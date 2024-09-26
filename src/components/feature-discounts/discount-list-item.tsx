@@ -14,7 +14,7 @@ export function DiscountListItem({item, handleAddToList}: Props) {
             <h3 className="font-bold text-lg text-wrap">{item.name}</h3>
             <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
             <div className="flex items-center mt-2">
-                <span className="text-lg font-bold mr-2">{item.price}</span>
+                <span className="text-lg font-bold mr-2">{item.dataOrigin == 'LIDL'? '€' : ''}{item.price}</span>
                 {item.originalPrice && <span className="text-sm line-through text-gray-400 mr-2">{item.originalPrice}</span>}
                 {item.discount && <span className="text-sm font-semibold text-red-600">{item.discount}</span>}
             </div>
