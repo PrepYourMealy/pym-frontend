@@ -11,7 +11,7 @@ export function DiscountListItem({item, handleAddToList}: Props) {
     return (<div className="flex items-center py-4">
         <img src={item.img!} alt={item.name!} className="w-20 h-20 object-cover rounded-md mr-4"/>
         <div className="flex-grow">
-            <h3 className="font-bold text-lg">{item.name}</h3>
+            <h3 className="font-bold text-sm">{item.name}</h3>
             <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
             <div className="flex items-center mt-2">
                 <span className="text-lg font-bold mr-2">{item.price}</span>
