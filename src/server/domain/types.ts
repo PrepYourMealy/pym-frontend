@@ -1,22 +1,22 @@
 export type Product = {
-  [key: string]: string | Date | null | number;
-  id: number;
-  img: string | null;
-  name: string | null;
-  description: string | null;
-  price: string | null;
-  originalPrice: string | null;
-  discount: string | null;
-  packaging: string | null;
-  availability: string | null;
-  dataOrigin: string | null;
+    [key: string]: string | Date | null | number;
+    id: number;
+    img: string | null;
+    name: string | null;
+    description: string | null;
+    price: string | null;
+    originalPrice: string | null;
+    discount: string | null;
+    packaging: string | null;
+    availability: string | null;
+    dataOrigin: string | null;
 };
 
 export type Ingredient = {
-  [key: string]: string | null;
-  name: string;
-  quantity: string;
-  unit: string;
+    [key: string]: string | null;
+    name: string;
+    quantity: string;
+    unit: string;
 };
 
 export type Step = {
@@ -27,14 +27,14 @@ export type Step = {
 
 export type Recipe = {
     [key: string]: string | Ingredient[] | Step[] | string[] | number;
-  name: string,
-  description: string,
-  ingredients: Ingredient[],
-  steps: Step[],
-  tags: string[],
-  prepTime: number,
-  cookTime: number,
-  servings: number,
+    name: string,
+    description: string,
+    ingredients: Ingredient[],
+    steps: Step[],
+    tags: string[],
+    prepTime: number,
+    cookTime: number,
+    servings: number,
 }
 
 export type DayMenu = {
@@ -45,57 +45,107 @@ export type DayMenu = {
 }
 
 export type Menu = {
-  [key: string]: DayMenu | null;
-  mon: DayMenu;
-  tue: DayMenu;
-  wed: DayMenu;
-  thu: DayMenu;
-  fri: DayMenu;
-  sat: DayMenu;
-  sun: DayMenu;
+    [key: string]: DayMenu | null;
+    mon: DayMenu;
+    tue: DayMenu;
+    wed: DayMenu;
+    thu: DayMenu;
+    fri: DayMenu;
+    sat: DayMenu;
+    sun: DayMenu;
 };
 
 
 export type ShoppingListItem = {
-  [key: string]: number | string | null | boolean;
-  name: string;
-  price: number;
-  quantity: string;
-  unit: string;
-  origin: string;
-  bought: boolean;
+    [key: string]: number | string | null | boolean;
+    name: string;
+    price: number;
+    quantity: string;
+    unit: string;
+    origin: string;
+    bought: boolean;
 };
 
 export type ShoppingList = {
-  [key: string]: number | ShoppingListItem[] | null;
-  total: number;
-  items: ShoppingListItem[];
+    [key: string]: number | ShoppingListItem[] | null;
+    total: number;
+    items: ShoppingListItem[];
 };
 
+export type MenuSettings = {
+    isActive: boolean;
+    people: number;
+}
 
+export type DailySettings = {
+    breakfast: MenuSettings | null;
+    lunch: MenuSettings | null;
+    dinner: MenuSettings | null;
+}
+
+export type WeeklySettings = {
+    [key: string]: DailySettings | null;
+    monday: DailySettings | null;
+    tuesday: DailySettings | null;
+    wednesday: DailySettings | null;
+    thursday: DailySettings | null;
+    friday: DailySettings | null;
+    saturday: DailySettings | null;
+    sunday: DailySettings | null;
+}
+
+export type ReducedWeeklySettings = {
+    overall: DailySettings | null;
+}
+
+export type Settings = {
+    budget: number | null;
+    favoriteMeals: string[] | null;
+    likedIngredients: string[] | null;
+    dislikedIngredients: string[] | null;
+    allergies: string[] | null;
+    dietaryPreferences: string[] | null;
+    kitchenEquipment: string[] | null;
+    includeDiscounts: boolean | null;
+    overallWeeklySettings: ReducedWeeklySettings | null;
+    weeklySettings: WeeklySettings | null;
+}
+
+export type Discount = {
+    id: string | null,
+    img: string | null,
+    name: string | null,
+    description: string | null,
+    price: string | null,
+    originalPrice: string | null,
+    discount: string | null,
+    packaging: string | null,
+    availability: string | null,
+    dataOrigin: string | null,
+}
 
 export type User = {
-  [key: string]: string | number | null | string[] | boolean;
-  id: string;
-  budget: number | null;
-  favoriteMeals: string[] | null;
-  kitchenEquipment: string[] | null;
-  dietaryPreferences: string[] | null;
-  allergies: string[] | null;
-  unlikeIngredients: string[] | null;
-  includeDiscounts: boolean | null;
-  likedIngredients: string[] | null;
-  people: number | null;
+    [key: string]: string | number | null | string[] | boolean;
+    id: string;
+    budget: number | null;
+    favoriteMeals: string[] | null;
+    kitchenEquipment: string[] | null;
+    dietaryPreferences: string[] | null;
+    allergies: string[] | null;
+    unlikeIngredients: string[] | null;
+    includeDiscounts: boolean | null;
+    likedIngredients: string[] | null;
+    people: number | null;
 };
 
 export type UserStats = {
-  [key: string]: number
-  weeklyRegenerateRequest: number
+    [key: string]: number
+    weeklyRegenerateRequest: number
 }
 
 export type UserLimits = {
-  [key: string]: number
-  regenerateRequestsPerWeek: number
+    [key: string]: number
+    regenerateRequestsPerWeek: number
 }
 
 export type UserModel = {
