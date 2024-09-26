@@ -49,7 +49,7 @@ export default function ShoppingListPage() {
     const currentDayKey = new Intl.DateTimeFormat('en-US', {weekday: 'short'}).format(new Date()).toLowerCase();
     return (
         <>
-            <DashboardNav title="Menü">
+            <DashboardNav title="Woche">
                 <MenuRegenerationButtonV2/>
             </DashboardNav>
             <DashboardContent>

@@ -24,12 +24,12 @@ import {Separator} from "~/components/ui/separator";
 const data = {
   navMain: [
     {
-      title: "Übersicht",
+      title: "Heute",
       url: "/dashboard",
       icon: House,
     },
     {
-      title: "Menu",
+      title: "Woche",
       url: "/dashboard/menu",
       icon: Utensils,
     },
@@ -39,12 +39,12 @@ const data = {
       icon: List,
     },
     {
-      title: "Discounts",
+      title: "Rabatte",
       url: "/dashboard/discounts",
       icon: Percent,
     },
     {
-      title: "Settings",
+      title: "Einstellungen",
       url: "/dashboard/settings",
       icon: Settings2,
     },

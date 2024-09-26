@@ -55,7 +55,7 @@ export default function DashboardHome() {
             })
     }, [])
     return <>
-        <DashboardNav title="Übersicht">
+        <DashboardNav title="Heute">
         </DashboardNav>
         <DashboardContent>
             <>
