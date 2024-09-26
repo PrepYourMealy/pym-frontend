@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function DiscountListItem({item, handleAddToList}: Props) {
-    return (<div className="flex items-center py-4 max-w-full">
+    return (<div className="flex items-center justify-between py-4 max-w-full">
         <img src={item.img!} alt={item.name!} className="w-20 h-20 object-cover rounded-md mr-4"/>
         <div>
             <h3 className="font-bold text-lg text-wrap">{item.name}</h3>
